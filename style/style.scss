@@ -319,6 +319,7 @@ li {
     border-radius: 10px;
     line-height: 3;
     transition: all 0.3s linear;
+    white-space: nowrap;
 
     &:hover {
       background-color: rgb(15, 162, 175);
@@ -329,10 +330,6 @@ li {
 .projects {
   background-color: $bg;
   padding: 20px 0;
-
-  &__item {
-    margin-bottom: 30px;
-  }
 
   &__title {
     font-weight: 600;
@@ -350,6 +347,11 @@ li {
     border-radius: 10px;
     width: 100%;
     padding: 10px 50px 10px 10px;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    &:hover {
+      background-color: rgb(15, 162, 175);
+    }
 
     @media (max-width: 576px) {
       font-size: 18px;
@@ -378,11 +380,16 @@ li {
 
   &__details {
     padding-left: 10px;
-    display: none;
     transition: all 0.3s linear;
+    height: 0;
+    position: relative;
+    left: -120%;
 
     &.open {
       display: block;
+      height: 100%;
+      opacity: 1;
+      left: 0px;
     }
 
     &-title-box {
@@ -410,6 +417,12 @@ li {
       align-items: center;
       border-radius: 50%;
       background-color: $darkGreen;
+      transition: all 0.3s linear;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgb(15, 162, 175);
+      }
 
       &:first-child {
         margin-right: 5px;
